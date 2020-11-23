@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+{% load crispy_forms_tags %}
+
+{% block content %}
+<div class="container">
+    <h1>{{ page_title }}</h1>
+    <form method="post" class="uniForm">
+        {% csrf_token %}
+        <table>
+            {{materi_form|crispy}}
+        </table>
+        <button class='btn btn-primary' type="submit">Kirim</button>
+    </form>
+</div>
+{% endblock %}

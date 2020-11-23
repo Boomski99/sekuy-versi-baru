@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<div class="text-center">
+  <h2>Sign up Now</h2>
+  <p class="lead">Sign up as Student or Teacher</p>
+  <a href="{% url 'student_signup' %}">
+    <img style="margin-left: 2em; margin-right:2em; width: 10vh;" 
+         src="{% static 'img/pelajar.png' %}" 
+         alt="pelajar" >
+  </a>
+  <a href="{% url 'teacher_signup' %}">
+    <img style="margin-left: 2em; margin-right:2em; width: 10vh;" 
+         src="{% static 'img/guru.png' %}"  
+         alt="guru" >
+  </a>
+  <br>
+  <a style="margin: 1em 2em;
+            background: #41C3F5 !important; 
+            color: white !important;
+            mix-blend-mode: normal;
+            box-shadow: 0px 0px 7px 4px rgba(0, 0, 0, 0.2);
+            border-radius: 6px;"
+     href="{% url 'student_signup' %}" 
+     class="btn btn-student btn-lg" 
+     role="button">Student</a>
+  <a style="margin: 1em 2em;
+            background: #41C3F5 !important; 
+            color: white !important;
+            mix-blend-mode: normal;
+            box-shadow: 0px 0px 7px 4px rgba(0, 0, 0, 0.2);
+            border-radius: 6px;"
+     href="{% url 'teacher_signup' %}" 
+     class="btn btn-teacher btn-lg" 
+     role="button">Teacher</a>
+  
+</div>
+{% endblock %}
