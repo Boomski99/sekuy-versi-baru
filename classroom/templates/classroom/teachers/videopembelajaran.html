@@ -5,12 +5,17 @@
     <h1 class="text-center">{{page_title}}</h1>
     <br><hr><br>
     {% for i in semua_video %}
-    {% video i.link 'small' %}
-    {% endfor %}
+    <div class="card" style="width: 20rem;">
+    {% video i.link 'tiny' %}
     <div class="card-body">
         <h5 class="card-title"><b>{{ i.materi }}</b></h5>
+        <br>
+        <a class="btn btn-warning" href="{% url 'teachers:edit_video' i.id %}">Edit</a>
+        <a class="btn btn-danger" href="{% url 'teachers:hapus_video' i.id %}">Hapus</a>
+    </div>
     </div>
     <br>
+    {% endfor %}
     <a class='btn btn-primary' href="{% url 'teachers:buat_video' %}">Tambah Video</a>
 {% endblock %}
 

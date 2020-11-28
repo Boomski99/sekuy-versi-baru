@@ -8,6 +8,8 @@
     {% for materi in semua_materi %}
     <h1>{{ materi.title }} - {{ materi.slug }}</h1>
     <dd><p>{{ materi.body }}</p></dd>
+    <a class="btn btn-warning" href="{% url 'teachers:edit_materi' materi.id %}">Edit</a>
+    <a class="btn btn-danger" href="{% url 'teachers:hapus_materi' materi.id %}">Hapus</a>
     <hr>
     {% endfor %}
     <a class='btn btn-primary' href="{% url 'teachers:buat_materi' %}">Tambah Materi</a>
