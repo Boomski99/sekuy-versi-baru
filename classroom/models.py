@@ -85,7 +85,7 @@ class Materi(models.Model):
     date = models.DateTimeField(auto_now_add=True)
 
     def __str__(self):
-        return "{}".format(self.id)
+        return "{}".format(self.title)
 
 class VideoPembelajaran(models.Model):
     materi = models.CharField(max_length=40)
@@ -93,4 +93,4 @@ class VideoPembelajaran(models.Model):
     date = models.DateField(auto_now_add=True)
     
     def __str__(self):
-        return "{}".format(self.id)
+        return "{}".format(self.materi)
